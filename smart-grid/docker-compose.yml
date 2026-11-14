@@ -1,0 +1,24 @@
+services:
+  cassandra:
+    image: cassandra:4.1
+    container_name: sg-cassandra
+    ports: ["9042:9042"]
+    environment:
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=128M
+    volumes: [cassandra_data:/var/lib/cassandra]
+
+  redis:
+    image: redis:7
+    container_name: sg-redis
+    ports: ["6379:6379"]
+
+  mongo:
+    image: mongo:7
+    container_name: sg-mongo
+    ports: ["27017:27017"]
+    volumes: [mongo_data:/data/db]
+
+volumes:
+  cassandra_data:
+  mongo_data:
