@@ -3,3 +3,5 @@ redis
 pymongo
 streamlit
 pandas
+pyasyncore
+pyasynchat
