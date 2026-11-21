@@ -4,7 +4,7 @@ from pymongo import MongoClient, ASCENDING, DESCENDING
 from config import *
 
 # ---------- Cassandra ----------
-cluster = Cluster(CASSANDRA_HOSTS) 
+cluster = Cluster(CASSANDRA_HOSTS) #connect to cassandra container
 session = cluster.connect()
 session.execute(f"""
     CREATE KEYSPACE IF NOT EXISTS {KEYSPACE}
